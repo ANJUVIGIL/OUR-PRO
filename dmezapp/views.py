@@ -154,9 +154,16 @@ def specific(request):
 	return render(request,'specificpage.html')
 
 def bestselling(request):
+	data = cartData(request)
+
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
 	products = Product.objects.all()
-	context = {'products':products}
+	context = {'products':products, 'cartItems':cartItems}
 	return render(request,'bestsellingproduct.html', context)
+
 
 def account(request):
 	return render(request,'account.html')
