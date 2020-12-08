@@ -18,6 +18,8 @@ class Product(models.Model):
 	mrp_price = models.FloatField()
 	price = models.FloatField()
 	desc = models.CharField(max_length=300)
+	best = models.BooleanField(default=False,null=True, blank=True)
+	today = models.BooleanField(default=False,null=True, blank=True)
 	pub_date = models.DateField()
 	digital = models.NullBooleanField(default=False,null=True, blank=True)
 	image = models.ImageField(null=True, blank=True)
